@@ -1,0 +1,1 @@
+fetch('./assets/data.json')
