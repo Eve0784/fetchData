@@ -63,7 +63,6 @@ function yugiOhCallback(result) {
         const flipFront = document.createElement('div');
         flipFront.classList.add('flip-front');
 
-        
         const cardImg = document.createElement('img');
         cardImg.classList.add('yugiOh-card-img');
         cardImg.src = card.card_images[0].image_url;
