@@ -14,13 +14,15 @@ body {
     padding: 0px;
 }
 
-.yugioh-logo {
+.yugioh-logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    width: 450px;
-    height: auto;
+}
+.yugioh-logo {
+    width: 300px;
+    margin: 1px;
 }
 
 h3 {
@@ -41,7 +43,6 @@ p {
 .cards-container {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     width: 90%;
     margin-bottom: 60px;
