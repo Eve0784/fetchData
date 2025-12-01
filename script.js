@@ -76,16 +76,6 @@ function yugiOhCallback(result) {
         cardName.appendChild(document.createTextNode(card.name));
         flipBack.appendChild(cardName);
 
-        if (card.card_sets && card.archetype && card.card_prices && card.card_sets.length > 0 && card.humanReadableCardType) {
-        const cardSetName = document.createElement('p');
-        cardSetName.appendChild(document.createTextNode('Nome del set: ' + card.card_sets[0].set_name));
-        flipBack.appendChild(cardSetName);
-
-        const cardSetCode = document.createElement('p');
-        cardSetCode .appendChild(document.createTextNode('Codice del set: ' + card.card_sets[0].set_code));
-        flipBack.appendChild(cardSetCode);
-        
-
         const cardType = document.createElement('p');
         cardType.appendChild(document.createTextNode('Tipo: ' + card.type));
         flipBack.appendChild(cardType);
@@ -94,15 +84,25 @@ function yugiOhCallback(result) {
         cardReadableType.appendChild(document.createTextNode('Sottotipo: ' + card.humanReadableCardType));
         flipBack.appendChild(cardReadableType);
 
-        const cardFrameType = document.createElement('p');
-        cardFrameType.appendChild(document.createTextNode('Arche tipo: ' + card.archetype));
-        flipBack.appendChild(cardFrameType);
-    
-        
+        if (card.card_sets) {
+        const cardSetName = document.createElement('p');
+        cardSetName.appendChild(document.createTextNode('Nome del set: ' + card.card_sets[0].set_name));
+        flipBack.appendChild(cardSetName);
+
+        const cardSetCode = document.createElement('p');
+        cardSetCode .appendChild(document.createTextNode('Codice del set: ' + card.card_sets[0].set_code));
+        flipBack.appendChild(cardSetCode);
+
         const cardRarity = document.createElement('p');
         cardRarity.appendChild(document.createTextNode('Rarità: ' + card.card_sets[0].set_rarity + " " + card.card_sets[0].set_rarity_code));
         flipBack.appendChild(cardRarity);
+        }
 
+        if (card.archetype) {
+        const cardFrameType = document.createElement('p');
+        cardFrameType.appendChild(document.createTextNode('Arche tipo: ' + card.archetype));
+        flipBack.appendChild(cardFrameType);
+        }
         
         const cardPrices = document.createElement('p');
         cardPrices.innerHTML = '<u>Prezzi </u><br>' +
@@ -112,8 +112,7 @@ function yugiOhCallback(result) {
         'Amazon: $' + card.card_prices[0].amazon_price + '<br>' +
         'CoolStuffInc: $' + card.card_prices[0].coolstuffinc_price;
         flipBack.appendChild(cardPrices);
-
-        }
+        
 
         flipInner.appendChild(flipFront);
         flipInner.appendChild(flipBack);
