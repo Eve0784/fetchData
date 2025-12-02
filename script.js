@@ -104,7 +104,7 @@ function yugiOhCallback(result) {
         }
         
         const cardPrices = document.createElement('p');
-        cardPrices.innerHTML = '<u>Prezzi </u><br>' +
+        cardPrices.innerHTML = '<u><b>Prezzi </b></u><br>' +
         'Cardmarket: $' + card.card_prices[0].cardmarket_price + '<br>' +
         'Tcgplayer: $' + card.card_prices[0].tcgplayer_price + '<br>' +
         'Ebay: $' + card.card_prices[0].ebay_price + '<br>' +
