@@ -8,6 +8,7 @@
 
 // fetch('./assets/data.json').then(manageResponse).then(manageResult);
 
+//------------------------CRUD------------------//
 // fetch('./assets/data.json')
 // .then(res => res.json())
 // .then(dataCallback)
@@ -16,6 +17,15 @@
 // function dataCallback(data) {
 //     console.log(data);
 
+// let xhr = new XMLHttpRequest();
+// xhr.open('GET', './assets/data.json', true);
+// xhr.onreadystatechange = function() {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//         const data = JSON.parse(xhr.responseText);
+//         console.log(data);
+//     }
+// };
+// xhr.send();
 
 // const bookCont = document.getElementById('book-container');
 
